@@ -6,17 +6,17 @@ using namespace std;
 #define MAXSIZE 3
 
 
-//¶¯Ì¬¹æ»®£¬ÄÃ×î´óÅÆÎÊÌâ
+//åŠ¨æ€è§„åˆ’ï¼Œæ‹¿æœ€å¤§ç‰Œé—®é¢˜
 
 
-//±©Á¦µİ¹é
+//æš´åŠ›é€’å½’
 // 
 //int f(int arr[3], int L, int R);
 //int g(int arr[3], int L, int R);
 //int fun1(int arr[3], int L, int R);
 //
 //int g(int arr[3], int L, int R)
-//{//ºóÊÖ»ñµÃ×îºÃ·ÖÊı
+//{//åæ‰‹è·å¾—æœ€å¥½åˆ†æ•°
 //	if (L == R)
 //		return 0;
 //	int p1 = f(arr, L+1, R);
@@ -25,7 +25,7 @@ using namespace std;
 //}
 //
 //int f(int arr[3],int L,int R)
-//{//ÏÈÊÖÄÃÅÆ»ñµÃ×îºÃ·ÖÊı
+//{//å…ˆæ‰‹æ‹¿ç‰Œè·å¾—æœ€å¥½åˆ†æ•°
 //	if (L == R)
 //	{
 //		return arr[R];
@@ -53,13 +53,13 @@ using namespace std;
 
 //---------------------------------------------------------------------------------
 
-//»º´æ·¨
+//ç¼“å­˜æ³•
 
 //int f(int arr[3], int L, int R, int**& farr, int**& garr);
 //int g(int arr[3], int L, int R,int**& farr, int**& garr);
 //
 //int g(int arr[3], int L, int R, int**& farr, int**& garr)
-//{//ºóÊÖ»ñµÃ×îºÃ·ÖÊı
+//{//åæ‰‹è·å¾—æœ€å¥½åˆ†æ•°
 //	if (garr[L][R] != -1)
 //	{
 //		return garr[L][R];
@@ -77,7 +77,7 @@ using namespace std;
 //}
 //
 //int f(int arr[3],int L,int R, int**& farr, int**& garr)
-//{//ÏÈÊÖÄÃÅÆ»ñµÃ×îºÃ·ÖÊı
+//{//å…ˆæ‰‹æ‹¿ç‰Œè·å¾—æœ€å¥½åˆ†æ•°
 //	if (farr[L][R] != -1)
 //	{
 //		return farr[L][R];
@@ -126,7 +126,7 @@ using namespace std;
 //
 //}
 
-//¶¯Ì¬¹æ»®·¨ 
+//åŠ¨æ€è§„åˆ’æ³• 
 //------------------------------------------------------------------------------------------
 
 int main()
@@ -141,16 +141,16 @@ int main()
 		garr[i] = (int*)malloc(MAXSIZE * sizeof(int));
 	}
 	for (int i = 0; i < MAXSIZE; i++)
-	{//³õÊ¼»¯Í¼±ê
+	{//åˆå§‹åŒ–å›¾æ ‡
 		farr[i][i] = arr[i];
 		garr[i][i] = 0;
 	}
-	//      f									g
-	//  0  1  2  R                         0  1  2  R
-    //0 1								   0 0
+	//      f							         g
+	//  0  1  2  R                                                       0  1  2  R
+        //0 1								   0 0
 	//1 x  2							   1 x  0
-	//2 x  x  3						       2 x  x  0
-	//L								       L 
+	//2 x  x  3						           2 x  x  0
+	//L								   L 
 	for (int col = 1; col < MAXSIZE; col++)
 	{
 		for (int l = 0, r = col; r < MAXSIZE; l++, r++)
